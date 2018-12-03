@@ -2,15 +2,27 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   wrapper: {
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    height: '60%',
-    backgroundColor: 'pink'
+    height: '70%'
   },
   image: {
-    width: 65,
-    height: 59,
-    backgroundColor: 'green'
+    width: 56,
+    height: 56,
+    borderWidth: 1,
+    borderColor: 'pink',
+    // overflow: visible
+  },
+  title: {
+    marginTop: 80,
+    marginBottom: 50,
+    fontFamily: 'vincHand',
+    fontSize: 30,
+    textShadowColor: 'black',
+    // fontWeight: '700',
+  },
+  loginButton: {
+    width: 100
   }
 });
 
