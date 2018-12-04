@@ -10,7 +10,7 @@ import loginImage from '../../assets/images/login.png';
 
 const Button =({ text, style, onPress }) => (
   <View style={styles.buttonWrapper}>
-    <TouchableHighlight style={[styles.button, style]} onPress={this.onPress}>
+    <TouchableHighlight style={[styles.button, style]} onPress={onPress}>
       <Text style={styles.buttonText}>{text}</Text>
     </TouchableHighlight>
   </View>

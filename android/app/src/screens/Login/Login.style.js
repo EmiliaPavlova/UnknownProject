@@ -10,8 +10,7 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderWidth: 1,
-    borderColor: 'pink',
-    // overflow: visible
+    borderColor: 'pink'
   },
   title: {
     marginTop: 80,

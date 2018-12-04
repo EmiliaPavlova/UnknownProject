@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Image,
@@ -11,19 +12,20 @@ const image = require('../../assets/images/product.png');
 const title = 'Product 1';
 const text = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.';
 
-class Product extends Component {
-  render() {
-    return (
-      <View style={styles.productWrapper}>
-        <View style={styles.productHeader}>
-          <Image style={styles.productImage} sourse={image} />
-          <Text style={styles.productTitle}>{title}</Text>
-        </View>
-        <Text style={styles.text}>{'\t'}{'\t'}{'\t'}{text}</Text>
-        <Button text='All Products' style={styles.button} onPress={() => {}} />
-      </View>
-    );
-  }
-}
+const Product = ({ onClick }) => (
+  <View style={styles.productWrapper}>
+    <View style={styles.productHeader}>
+      <Image style={styles.productImage} sourse={image} />
+      <Text style={styles.productTitle}>{title}</Text>
+    </View>
+    <Text style={styles.text}>{'\t'}{'\t'}{'\t'}{text}</Text>
+    <Button text='All Products' style={styles.button} onPress={onClick} />
+  </View>
+);
+
+Product.propTypes = {
+  onClick: PropTypes.func
+};
+
 
 export default Product;

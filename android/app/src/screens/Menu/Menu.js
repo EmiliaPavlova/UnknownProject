@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   View,
   Image,
@@ -22,28 +23,28 @@ const data = [
   { key: 'Product 8', image: require('../../assets/images/ball.png'), order: 'last'}
 ];
 
-class Menu extends Component {
-  render() {
-    return (
-      <View style={styles.menuWrapper}>
-      <Text style={styles.menuTitle}>Products</Text>
-      <FlatList
-        data={data}
-        renderItem={({item}) => (
-          <TouchableOpacity onPress={() => {}}>
-            <View style={[styles.row, item.order === 'last' ? styles.lastRow : null]}>
-              <View style={styles.leftSide}>
-                <Image style={styles.image} source={item.image} />
-                <Text style={styles.text}>{item.key}</Text>
-              </View>
-              <Text style={styles.arrow}>&#x27A4;</Text>
-            </View>
-          </TouchableOpacity>
-        )}
-      />
-      </View>
-    );
-  }
-}
+const Menu = ({ onClick }) => (
+  <View style={styles.menuWrapper}>
+  <Text style={styles.menuTitle}>Products</Text>
+  <FlatList
+    data={data}
+    renderItem={({item}) => (
+      <TouchableOpacity onPress={onClick}>
+        <View style={[styles.row, item.order === 'last' ? styles.lastRow : null]}>
+          <View style={styles.leftSide}>
+            <Image style={styles.image} source={item.image} />
+            <Text style={styles.text}>{item.key}</Text>
+          </View>
+          <Text style={styles.arrow}>&#x27A4;</Text>
+        </View>
+      </TouchableOpacity>
+    )}
+  />
+  </View>
+);
+
+Menu.propTypes = {
+  onClick: PropTypes.func
+};
 
 export default Menu;
