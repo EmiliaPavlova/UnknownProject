@@ -9,9 +9,6 @@ import {
 } from 'react-native';
 import styles from './Menu.style';
 
-const image = require('../../assets/images/product.png');
-const title = 'Product 1';
-
 const data = [
   { key: 'Product 1', image: require('../../assets/images/product.png')},
   { key: 'Product 2', image: require('../../assets/images/login.png')},

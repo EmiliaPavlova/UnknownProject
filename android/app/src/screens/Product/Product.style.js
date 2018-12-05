@@ -17,9 +17,7 @@ const styles = StyleSheet.create({
   },
   productImage: {
     width: 56,
-    height: 56,
-    borderWidth: 1,
-    borderColor: 'pink'
+    height: 56
   },
   productTitle: {
     marginLeft: 20,

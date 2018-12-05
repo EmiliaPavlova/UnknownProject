@@ -15,7 +15,7 @@ const text = 'Lorem Ipsum is simply dummy text of the printing and typesetting i
 const Product = ({ onClick }) => (
   <View style={styles.productWrapper}>
     <View style={styles.productHeader}>
-      <Image style={styles.productImage} sourse={image} />
+      <Image style={styles.productImage} source={image} />
       <Text style={styles.productTitle}>{title}</Text>
     </View>
     <Text style={styles.text}>{'\t'}{'\t'}{'\t'}{text}</Text>

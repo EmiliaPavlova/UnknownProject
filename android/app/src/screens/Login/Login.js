@@ -12,11 +12,11 @@ const image = require('../../assets/images/login.png');
 
 const Login = ({ onClick }) => (
   <View style={styles.wrapper}>
-    <Image style={styles.image} sourse={image} />
-    <Text style={styles.title}>Friday's shop</Text>
-    <Button text='email' onPress={() => {}} />
-    <Button text='Text box' onPress={() => {}} />
-    <Button text='login' style={styles.loginButton} onPress={onClick} />
+      <Image style={styles.image} source={image} />
+      <Text style={styles.title}>Friday's shop</Text>
+      <Button text='email' onPress={() => {}} />
+      <Button text='Text box' onPress={() => {}} />
+      <Button text='login' style={styles.loginButton} onPress={onClick} />
   </View>
 );
 

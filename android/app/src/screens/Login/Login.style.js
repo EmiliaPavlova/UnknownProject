@@ -8,17 +8,14 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 56,
-    height: 56,
-    borderWidth: 1,
-    borderColor: 'pink'
+    height: 56
   },
   title: {
     marginTop: 80,
     marginBottom: 50,
     fontFamily: 'vincHand',
     fontSize: 30,
-    textShadowColor: 'black',
-    // fontWeight: '700',
+    textShadowColor: 'black'
   },
   loginButton: {
     width: 100
