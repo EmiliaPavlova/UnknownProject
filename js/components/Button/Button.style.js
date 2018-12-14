@@ -1,13 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  buttonWrapper: {
-    marginTop: 30
-  },
   button: {
     justifyContent: 'space-around',
     alignItems: 'center',
-    width: 300,
+    width: 100,
     height: 30,
     borderWidth: 1,
     borderRadius: 4,

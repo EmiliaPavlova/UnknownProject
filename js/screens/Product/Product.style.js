@@ -1,6 +1,17 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  header: {
+    width: '80%',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  navigationBack: {
+    width: 30,
+    height: 30,
+    marginLeft: 10
+  },
   productWrapper: {
     paddingTop: 40,
     paddingRight: 100,
