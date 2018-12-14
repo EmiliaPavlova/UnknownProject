@@ -1,27 +1,57 @@
-import React, {Component} from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import Login from './android/app/src/screens/Login/Login';
-import Product from './android/app/src/screens/Product/Product';
-import Menu from './android/app/src/screens/Menu/Menu';
-import styles from './styles';
+import React, { Component } from 'react';
+import {
+  AsyncStorage,
+  Platform,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+import { createStackNavigator, createSwitchNavigator, createAppContainer } from 'react-navigation';
+import Login from './js/screens/Login/Login';
+import Menu from './js/screens/Menu/Menu';
+import Product from './js/screens/Product/Product';
 
-export default class App extends Component {
-  // TODO: clear this when navigation is added
+const AppNavigator = createStackNavigator(
+  {
+    Menu: Menu,
+    Product: Product
+  }
+);
+
+const AuthNavigator = createStackNavigator({ 
+  Login: Login
+});
+
+const AppContainer = createAppContainer(createSwitchNavigator(
+  {
+    App: AppNavigator,
+    Auth: AuthNavigator,
+  },
+  {
+    initialRouteName: 'Auth',
+  }
+  ));
+
+class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { page: 'login' };
+    this.getTokenAsync = this.getTokenAsync.bind(this);;
   }
 
-  redirect = newPage => this.setState({ page: newPage });
+  getTokenAsync = async () => {
+    try {
+      const userToken = await AsyncStorage.getItem('userToken');
+      this.props.navigation.navigate(userToken ? 'App' : 'Auth');
+    } catch (error) {
+      console.log(err);
+    }
+  };
 
   render() {
-    const { page } = this.state;
     return (
-      <View style={styles.container}>
-        {page === 'login' && <Login onClick={() => this.redirect('menu')} />}
-        {page === 'menu' && <Menu onClick={() => this.redirect('product')} />}
-        {page === 'product' && <Product onClick={() => this.redirect('menu')} />}
-      </View>
+        <AppContainer />
     );
   }
 }
+
+export default App;

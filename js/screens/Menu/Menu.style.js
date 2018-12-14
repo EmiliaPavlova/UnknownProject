@@ -1,6 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  header: {
+    width: '100%',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
   menuWrapper: {
     flex: 1,
     width: '100%'
