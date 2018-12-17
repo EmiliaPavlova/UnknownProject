@@ -15,7 +15,7 @@ const back = require('../../assets/images/back-arrow.png');
 
 class Product extends Component {
   static navigationOptions = ({ navigation }) => ({
-    headerTitle: <Text style={styles.header}>Product</Text>,
+    headerTitle: <Text style={styles.header}>{navigation.state.params.product.key}</Text>,
     headerLeft: <TouchableHighlight
       underlayColor="transparent"
       onPress={() => {
